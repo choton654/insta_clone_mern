@@ -3,7 +3,7 @@ const authrouter = require("./route/auth");
 const postrouter = require("./route/post");
 const cookieparser = require("cookie-parser");
 const cors = require("cors");
-const { MONGO_URI } = require("./keys");
+const { MONGO_URI } = require("./config/keys");
 const mongoose = require("mongoose");
 const path = require("path");
 //db set-up
