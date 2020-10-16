@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 
 const authMiddleware = (req, res, next) => {
-  const token = req.headers?.authorization;
+  const token = req.headers.authorization;
 
   if (token) {
     jwt.verify(token, "a new secret", async (err, decoded) => {
