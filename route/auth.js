@@ -220,7 +220,7 @@ router.put("/api/unfollow", authMiddleware, async (req, res) => {
 });
 
 router.put("/api/updatepic", authMiddleware, upload, async (req, res) => {
-  const photo = `http://localhost:5000/profilepic/${req.file.filename}`;
+  const photo = `https://pacific-crag-92696.herokuapp.com/profilepic/${req.file.filename}`;
   const { id } = req.user;
   try {
     const updatedPic = await User.findByIdAndUpdate(
