@@ -37,7 +37,7 @@ router.post("/api/createpost", authMiddleware, upload, async (req, res) => {
   if (req.file === undefined) {
     return res.status(400).json({ msg: "Photo field can't be empty" });
   }
-  const photo = `http://localhost:5000/upload/${req.file?.filename}`;
+  const photo = `https://pacific-crag-92696.herokuapp.com/upload/${req.file.filename}`;
   req.user.password = undefined;
   try {
     const newPost = await Post.create({

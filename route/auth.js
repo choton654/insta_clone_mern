@@ -38,7 +38,8 @@ const upload = multer({ storage: storage }).single("photo");
 router.post("/api/signup", upload, async (req, res) => {
   const { email, username, password } = req.body;
 
-  const photo = `http://localhost:5000/profilepic/${req.file?.filename}`;
+  // const photo = `http://localhost:5000/profilepic/${req.file?.filename}`;
+  const photo = `https://pacific-crag-92696.herokuapp.com/profilepic/${req.file.filename}`;
 
   if (!isEmail(email)) {
     return res.status(400).json({ msg: "Use valid email" });
