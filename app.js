@@ -7,10 +7,14 @@ const { MONGO_URI } = require("./config/keys");
 const mongoose = require("mongoose");
 const path = require("path");
 //db set-up
-mongoose.connect(process.env.MONGO_URI || MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  process.env.MONGO_URI ||
+    "mongodb+srv://admin-choton:Toton_688@cluster0.j7z2c.mongodb.net/insta_clone?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
@@ -23,7 +27,7 @@ app.use(cors());
 app.use(express.static("public"));
 app.use(cookieparser());
 app.use(express.json());
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 5000;
 
 //routes
 
